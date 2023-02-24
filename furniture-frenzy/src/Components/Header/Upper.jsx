@@ -1,19 +1,27 @@
 import { Navbar } from "./NavBar"
 import "./Upper.css"
 import { Link } from "react-router-dom"
+import {FiHelpCircle} from "react-icons/fi"
+import {FaSearchLocation} from "react-icons/fa"
 export function Upper() {
     return (
         <>
+             <div className="yellowdiv">
+               <h3 style={{fontWeight:"55"}}>Spring into Sale | Up to 60% off | Now Live |</h3>
+               <h3 style={{color: "rgb(255, 102, 0)"}}>Click to shop!</h3>
+             </div>
             <div className="topdiv">
                 <div>
-                    <a href="./">Help</a>
-                    <a href="./">Track Order</a>
+                    <Link to="" className="linktopdiv"><FiHelpCircle/>   Help</Link>
+                    <Link to="" className="linktopdiv"><FaSearchLocation/>   Track Order</Link>
+                    
                 </div>
                 <div>
-                    <a href="./">Stores</a>
-                    <a href="./">Bulk Order</a>
-                    <a href="./">Gift Cards</a>
-                    <a href="./">UL Services</a>
+                <Link to="" className="linktopdiv">Stores</Link>
+                <Link to="" className="linktopdiv">Bulk Order</Link>
+                <Link to="" className="linktopdiv">Gift Cards</Link>
+                <Link to="" className="linktopdiv">UL Services</Link>
+                   
                 </div>
             </div>
 
@@ -21,12 +29,12 @@ export function Upper() {
             <div className="dropdown">
                 <ul>
                     <li>
-                        <Link to="">Deal Zone</Link>
+                        <Link to="" className="wrap">Deal Zone</Link>
                         <div className="dropdown-content">
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Top Deals</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Top Deals</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Daily Deals</Link></p>
@@ -47,7 +55,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Sofas</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Sofas</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofas</Link></p>
@@ -63,7 +71,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Recliners</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Recliners</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Recliners</Link></p>
@@ -79,7 +87,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Sofa Bed</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Sofa Bed</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofa Bed</Link></p>
@@ -91,7 +99,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Seating & Chairs</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Seating & Chairs</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -113,7 +121,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Seating & Chairs</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Seating & Chairs</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -131,7 +139,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Tabels</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Tabels</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Coffee Tabels</Link></p>
@@ -144,7 +152,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Living Storage</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Living Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">TV Units</Link></p>
@@ -168,7 +176,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Beds</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Beds</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Beds</Link></p>
@@ -188,7 +196,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Mattresses</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Mattresses</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Mattresses</Link></p>
@@ -207,7 +215,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Storage & Accessories</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Storage & Accessories</Link></h5>
                                     </div>
 
                                     <div>
@@ -225,7 +233,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Kids Room</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Kids Room</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Kids Beds </Link></p>
@@ -244,7 +252,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Dining Tables & Chairs</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Dining Tables & Chairs</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">6 Seater Dining Tables Sets</Link></p>
@@ -262,7 +270,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Storage & bar Furniture</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Storage & bar Furniture</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Crockery Units</Link></p>
@@ -282,7 +290,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Living Storage</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Living Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Shoe Racks</Link></p>
@@ -296,7 +304,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Bedroom Storage</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Bedroom Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Coupboards</Link></p>
@@ -310,7 +318,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Dining Storage</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Dining Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Crockery Units</Link></p>
@@ -322,7 +330,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Kids Storage</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Kids Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Kids Bookshelves</Link></p>
@@ -341,7 +349,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Study Tables</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Study Tables</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Study Tables</Link></p>
@@ -355,7 +363,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Study Chair</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Study Chair</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Study Chair</Link></p>
@@ -368,7 +376,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Storage</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Bookshelevs</Link></p>
@@ -378,7 +386,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Decor</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Decor</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Study Lamps</Link></p>
@@ -393,7 +401,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Lighting</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Lighting</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofas</Link></p>
@@ -409,7 +417,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Carpets & Rugs</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Carpets & Rugs</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Recliners</Link></p>
@@ -425,7 +433,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Home Linen</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Home Linen</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofa Bed</Link></p>
@@ -437,7 +445,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Wall Decor</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Wall Decor</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -452,7 +460,7 @@ export function Upper() {
                                 </div>
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Home Decor</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Home Decor</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -474,7 +482,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Balcony & Outdoors</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Balcony & Outdoors</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Balcony Chairs</Link></p>
@@ -494,7 +502,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Urban Interiors</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Urban Interiors</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Full Home Interiors</Link></p>
@@ -511,7 +519,7 @@ export function Upper() {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">House Of Urban Ladder</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>House Of Urban Ladder</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofas</Link></p>
@@ -523,7 +531,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">New Arrivals</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>New Arrivals</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">1 Seater Recliners</Link></p>
@@ -539,7 +547,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">Best Sellers</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>Best Sellers</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Fabric Sofa Bed</Link></p>
@@ -553,7 +561,7 @@ export function Upper() {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">All Furniture</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>All Furniture</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -568,7 +576,7 @@ export function Upper() {
                                 </div>
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#">UL Exclusive</Link></h5>
+                                        <h5><Link to="#" style={{fontWeight:"600"}}>UL Exclusive</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>

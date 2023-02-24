@@ -1,10 +1,10 @@
 import './App.css';
-import {Upper} from './Components/Header/Upper';
 import { BrowserRouter as Router } from 'react-router-dom';
+import HomePage from './Pages/Homepage';
 function App() {
   return (
     <Router>
-    <Upper/>
+    <HomePage/>
     </Router>
   );
 }

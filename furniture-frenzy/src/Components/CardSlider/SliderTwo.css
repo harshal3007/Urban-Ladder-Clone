@@ -1,0 +1,13 @@
+.SliderTwo{
+    /* border: 1px solid black; */
+    padding-bottom: 50px;
+}
+.SliderTwo img:hover{
+    width: 260px;
+}
+.SliderFour{
+    padding-bottom: 50px; 
+}
+.SliderFour img{
+    width: 230px;
+}
