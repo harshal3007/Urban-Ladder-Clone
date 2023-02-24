@@ -11,32 +11,40 @@ html{
 .nav{
     /* border: 1px solid black; */
     width: 100%;
-    height: 5rem;
+    height: 7rem;
     display: grid;
     align-items: center;
     grid-template-columns: 100px 1fr 2fr 1fr 100px;
+    padding: 10px 0px 10px 0px;
+  border-bottom: 1px solid #eae7e7;
+  border-top: 1px solid #eae7e7;
 }
 .logofornav{
     grid-column: 2/3;
     display: flex;
     align-items: center;
+    gap: 20px;
     /* border: 1px solid black; */
     height: 5rem;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
+
 .logofornav img{
  width: 20%;
  height: 100%;
 
 }
 
-.logofornav h1{
+
+.h1tag{
+    
     width: 75%;
-    height:fit-content;
-    font-size: 1.5rem;
-    font-weight: 620;
-    color: rgb(81, 81, 81);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height:5rem;
+    font-size: 1.4rem;
+    font-weight: 1000;
+    color: rgb(54, 62, 87);
+    font-family:'Courier New', Courier, monospace;
+    margin-top: 5px;
 }
 
 .search {
@@ -50,12 +58,13 @@ html{
   }
   
   .search__input {
-    border: 1px solid rgb(83, 83, 83);
-    color: #060606;
+    border: 1px solid rgb(189, 186, 186);
+    color: #353333;
     padding: 5px;
-    background-color:#f0eeee ;
+    background-color : white ;
     border-radius: 2px;
     width: 100%;
+    height: 4rem;
     transition: all ease-in-out .5s;
     margin-right: -8rem;
   }
@@ -63,9 +72,10 @@ html{
   .search__button {
     width: 10%;
     border: none;
-    border-right: 1px solid black;
+    border-right: 1px solid rgb(189, 186, 186);
     border-radius: 2px;
     margin-top: .1em;
+    background-color : white ;
   }
   
   .search__button:hover {
@@ -96,6 +106,10 @@ html{
 }
 .iconcolor{
     color: black;
+    font-weight: 400;
+}
+.iconcolor:hover{
+  color: rgb(255, 115, 0);
 }
 .hamburger-menu{
   display: none;

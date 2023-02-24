@@ -11,14 +11,19 @@ export function Navbar() {
     return (
         <>
             <nav className="nav">
-                <Link to="/" className="logofornav">
+                <Link to="/" className="logofornav" style={{textDecoration: 'none'}}>
              
                     <img src={img1} alt="Logo" />
-                    <h1>FurnitureFrenzy</h1>
+                    <div className="h1tag">
+                    <h1>Furniture</h1>
+                    <h1>Frenzy</h1>
+                    
+                    </div>
+                    
                 </Link>
                 
                 <div className="search">
-                    <input type="text" className="search__input" placeholder="Type your text"/>
+                    <input type="text" className="search__input" placeholder="Search"/>
                         <button className="search__button">
                             <svg className="search__icon" aria-hidden="true" viewBox="0 0 24 24">
                                 <g>
