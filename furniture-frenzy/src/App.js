@@ -1,11 +1,17 @@
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom';
-import HomePage from './Pages/Homepage';
+import HomePage from './Components/Pages/Homepage.jsx';
+import { Routes,Route } from 'react-router-dom';
+import { SofaPage } from './Components/Pages/Sofas';
+import { Cart } from './Components/Pages/Cart';
 function App() {
   return (
-    <Router>
-    <HomePage/>
-    </Router>
+    <Routes>
+        <Route path='/' element={<HomePage/>}></Route>
+        <Route path='/Sofas' element={<SofaPage/>}></Route>
+        <Route path='/CartPage' element={<Cart/>}></Route>
+        
+    </Routes>
+    
   );
 }
 

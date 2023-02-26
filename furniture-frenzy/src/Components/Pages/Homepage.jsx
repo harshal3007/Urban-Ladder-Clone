@@ -1,20 +1,22 @@
-import { Footer } from "../Components/Footer/footer";
-import { Upper } from "../Components/Header/Upper";
-import Slider from "../Components/Slider/Slider"
+import { Footer } from "../Footer/footer";
+import Slider from "../Slider/Slider"
 import { CiPercent, CiStar, CiMonitor } from "react-icons/ci"
 import { GiSofa, GiBed, GiTable, GiWoodenChair, GiDesk, GiBookshelf, GiBedLamp } from "react-icons/gi"
 import { RiArchiveDrawerLine, RiStore3Line } from "react-icons/ri"
 import { MdOutlineAirlineSeatReclineExtra } from "react-icons/md"
 import { BsHddRack } from "react-icons/bs"
 import "./Homepage.css"
-import { SliderTwo } from "../Components/CardSlider/SliderTwo";
-import { SliderThree } from "../Components/CardSlider/SliderThree";
-import { SliderFour } from "../Components/CardSlider/SliderFour";
+import { SliderTwo } from "../CardSlider/SliderTwo";
+import { SliderThree } from "../CardSlider/SliderThree";
+import { SliderFour } from "../CardSlider/SliderFour";
+import {Navbar} from "../Header/NavBar"
+
 function HomePage() {
+    
 
     return (
         <>
-            <Upper />
+            <Navbar/>
             <Slider />
             <div>
                 <div className=" furniture-range">
@@ -46,33 +48,33 @@ function HomePage() {
                 <div className=" furniture-range">
                     <h1>Value Buys In Furniture</h1>
                     <hr />
-                    <SliderTwo/>
+                    <SliderTwo />
                 </div>
             </div>
             <div>
                 <div className=" furniture-range">
                     <h1>Value Buys In Decor</h1>
                     <hr />
-                    <SliderThree/>
+                    <SliderThree />
                 </div>
             </div>
             <div>
-                <hr className="hrline"/>
+                <hr className="hrline" />
                 <div className=" furniture-range">
                     <h1>Popular Across Site</h1>
                     <hr />
-                    <SliderFour/>
+                    <SliderFour />
                 </div>
             </div>
             <div>
                 <div className="last-div">
                     <h1>SIGN UP AND GET A CHANCE TO WIN THE GIVEAWAY OF THE WEEK.</h1>
                     <div>
-                    <input type="email"  placeholder="Your Email ID"/>
-                    <button>SUBSCRIBE</button>
+                        <input type="email" placeholder="Your Email ID" />
+                        <button>SUBSCRIBE</button>
 
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -80,11 +82,11 @@ function HomePage() {
 
 
 
-                <Footer />
+            <Footer />
 
-            </>
-            )
+        </>
+    )
 
 }
 
-            export default HomePage;
+export default HomePage;
