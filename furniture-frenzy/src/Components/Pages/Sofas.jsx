@@ -22,7 +22,7 @@ export function SofaPage() {
   const handleSearch = async (e) => {
     e.preventDefault();
     return await axios
-      .get(`http://localhost:3333/Sofas?q=${value}`)
+      .get(`https://magnificent-bass-scrubs.cyclic.app/Sofas?q=${value}`)
       .then((res) => {
         setData(res.data)
         setValue("")
@@ -34,7 +34,7 @@ export function SofaPage() {
     setSortData(value);
     try {
       const response = await axios.get(
-        `http://localhost:3333/Sofas?_sort=${value}&_order=asc`
+        `https://magnificent-bass-scrubs.cyclic.app/Sofas?_sort=${value}&_order=asc`
       );
       setData(response.data);
     } catch (error) {
@@ -50,7 +50,7 @@ export function SofaPage() {
   const loadSofasData = async (page) => {
     try {
       const response = await axios.get(
-        `http://localhost:3333/Sofas?_limit=9&_page=${page}`
+        `https://magnificent-bass-scrubs.cyclic.app/Sofas?_limit=9&_page=${page}`
       );
       setData(response.data);
     } catch (error) {
