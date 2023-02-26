@@ -1,197 +1,239 @@
-.FirstDiv{
-    width: 83%;
-    margin: auto;
-    text-align: center;
-    padding: 30px 0px;
+.FirstDiv {
+  width: 83%;
+  margin: auto;
+  text-align: center;
+  padding: 30px 0px;
 }
-.FirstDiv h2{
-    font-size: 28px;
-    margin-bottom:20px;
-    color: #2F4858;
-    font-weight: 500;
-    font-family: monospace; 
+
+.FirstDiv h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2F4858;
+  font-weight: 500;
+  font-family: monospace;
 }
-.FirstDiv p{
-    font-size: 15px;
-    font-weight: 200;
+
+.FirstDiv p {
+  font-size: 15px;
+  font-weight: 200;
 }
+
 .sofadiv {
-    width: 83%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .image {
-    width: 100%;
-    height: 28rem;
-    border-radius: 8px 8px 0px 0px;
-  }
-  
-  .item {
-    position: relative;
-    /* border: 1px solid black; */
-    width: 96%;
-    height: 45rem;
-    text-align: center;
-    margin: 10px;
-    border-radius: 5px;
-  }
-  
-  .item:hover .add-to-cart-button {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  .name {
-    font-size: 16px;
-    color: black;
-    font-weight: 400;
-    margin: 0 0 4px;
-  }
-  
-  .brandName {
-    font-size: 14px;
-    color: #848484;
-  }
-  
-  .price {
-    display: flex;
-    height: 40px;
-    align-items: center;
-  }
-  
-  .price .symbolWithTotalPrice {
-    text-decoration: line-through;
-    color: #848484;
-    font-size: 12px;
-  }
-  
-  .price .discountPrice {
-    font-size: 16px;
-    color: #ff7035;
-    margin-right: 8px;
-    font-weight: bolder;
-  }
-  
-  .discount {
-    font-size: 14px;
-    color: #67ad5b;
-    font-weight: bold;
-    margin: 0 0 8px;
-  }
-  
-  .shippingDay {
-    font-size: 12px;
-    color: #121212;
-  }
-  
-  .add-to-cart-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 8px;
-    background-color: rgb(217, 111, 45);
-    color: white;
-    border: none;
-    padding: 7px;
-    margin: 10px;
-    width: 40%;
-    border-radius: 4px;
-    cursor: pointer;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-  
-  .add-to-cart-button:hover {
-    background-color: #67ad5b;
-    color: white;
-  }
-.item:hover{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}  
+  width: 83%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.image {
+  width: 100%;
+  height: 28rem;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.item {
+  position: relative;
+  /* border: 1px solid black; */
+  width: 96%;
+  height: 45rem;
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+}
+
 .item:hover .add-to-cart-button {
-    display: block;
-  }
-  .item:hover .add-to-compare-button,
-  .item:hover .view-options-button {
-    display: flex;
-  }
-  .add-to-compare-button,
-  .view-options-button {
-    display: none;
-    width: 40%;
-    position: absolute;
-    font-size: 14px;
-    border-radius: 4px;
-  }
-  .add-to-compare-button{
-    background-color: white;
-    color: rgb(217, 111, 45);
-    border: 2px solid rgb(217, 111, 45);
-    padding: 5.5px;
-    margin: 5px 24px;
-  }
-  .view-options-button{
-    background-color: rgb(217, 111, 45);
-    color: white;
-    border: none;
-    padding: 7px;
-    margin: 5px 24px;
-  }
-  .view-options-button:hover {
-    cursor: pointer;
-    background-color: white;
-    color: rgb(217, 111, 45);
-    border: 2px solid rgb(217, 111, 45);
-  }
-  .add-to-compare-button:hover{
-    cursor: pointer;
-    background-color: rgb(217, 111, 45);
-    color: white;
-  }
-  .add-to-compare-button {
-    left: 0;
-  }
-  .view-options-button {
-    right: 0;
-  }
-  .bore{
-    width: 100%;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  .pagination-div{
-    width: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
-  }
-  .pagination-div button{
-    width: 5%;
-    padding: 5px;
-    border-radius: 4px ;
-    border: none;
-    background-color: rgb(217, 111, 45);
-    color: white;
-    margin: 0px 20px;
-  }
-  .pagination-div button:hover{
-    cursor: pointer;
-    background-color: white;
-    color: rgb(217, 111, 45);
-    border: 2px solid rgb(217, 111, 45);
-  }
+  transform: translateY(0);
+  opacity: 1;
+}
 
-  .pagination-div h1{
-    font-weight: 500;
-    font-family: monospace;
-  }
-  .pagination-div h1:hover{
-    cursor: not-allowed;
-  }
+.name {
+  font-size: 16px;
+  color: black;
+  font-weight: 400;
+  margin: 0 0 4px;
+}
 
+.brandName {
+  font-size: 14px;
+  color: #848484;
+}
 
+.price {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.price .symbolWithTotalPrice {
+  text-decoration: line-through;
+  color: #848484;
+  font-size: 12px;
+}
+
+.price .discountPrice {
+  font-size: 16px;
+  color: #ff7035;
+  margin-right: 8px;
+  font-weight: bolder;
+}
+
+.discount {
+  font-size: 14px;
+  color: #67ad5b;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.shippingDay {
+  font-size: 12px;
+  color: #121212;
+}
+
+.add-to-cart-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  background-color: rgb(217, 111, 45);
+  color: white;
+  border: none;
+  padding: 7px;
+  margin: 10px;
+  width: 40%;
+  border-radius: 4px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #67ad5b;
+  color: white;
+}
+
+.item:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.item:hover .add-to-cart-button {
+  display: block;
+}
+
+.item:hover .add-to-compare-button,
+.item:hover .view-options-button {
+  display: flex;
+}
+
+.add-to-compare-button,
+.view-options-button {
+  display: none;
+  width: 40%;
+  position: absolute;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.add-to-compare-button {
+  background-color: white;
+  color: rgb(217, 111, 45);
+  border: 2px solid rgb(217, 111, 45);
+  padding: 5.5px;
+  margin: 5px 24px;
+}
+
+.view-options-button {
+  background-color: rgb(217, 111, 45);
+  color: white;
+  border: none;
+  padding: 7px;
+  margin: 5px 24px;
+}
+
+.view-options-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(217, 111, 45);
+  border: 2px solid rgb(217, 111, 45);
+}
+
+.add-to-compare-button:hover {
+  cursor: pointer;
+  background-color: rgb(217, 111, 45);
+  color: white;
+}
+
+.add-to-compare-button {
+  left: 0;
+}
+
+.view-options-button {
+  right: 0;
+}
+
+.bore {
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination-div {
+  width: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.pagination-div button {
+  width: 5%;
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  background-color: rgb(217, 111, 45);
+  color: white;
+  margin: 0px 20px;
+}
+
+.pagination-div button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(217, 111, 45);
+  border: 2px solid rgb(217, 111, 45);
+}
+
+.pagination-div h1 {
+  font-weight: 500;
+  font-family: monospace;
+}
+
+.pagination-div h1:hover {
+  cursor: not-allowed;
+}
+
+.filsordiv {
+  width: 83%;
+  margin: auto;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+  height: 4rem;
+}
+
+.sortbtn,
+.filtertag {
+  background-color: rgb(217, 111, 45);
+  color: white;
+  border: none;
+  height: 2.5rem;
+  border-radius: 5px;
+}
+
+.filsordiv p {
+  font-size: 10px;
+  font-weight: 400;
+}

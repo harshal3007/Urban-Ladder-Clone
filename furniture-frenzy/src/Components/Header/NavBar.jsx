@@ -1,71 +1,77 @@
-import React ,{useState} from "react";
-import { FaSearchLocation, FaShoppingCart, FaUser, FaRegHeart } from "react-icons/fa"
+import React, { useState } from "react";
+import { FaSearchLocation, FaShoppingCart, FaRegHeart } from "react-icons/fa"
 import "./NavBar.css"
-import {GiHamburgerMenu} from "react-icons/gi"
+import { GiHamburgerMenu } from "react-icons/gi"
 import img1 from "../images/Untitled design (1).png"
-import {Link} from "react-router-dom";
-import {FiHelpCircle} from "react-icons/fi"
+import { Link } from "react-router-dom";
+import { FiHelpCircle } from "react-icons/fi";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export function Navbar(props) {
-      const [showIcons, setShowIcons] = useState(false);
-      const [value, setValue] = useState("");
-      const handlehamburger = ()=> setShowIcons(!showIcons)
+    const [showIcons, setShowIcons] = useState(false);
+    const [value, setValue] = useState("");
+    const handlehamburger = () => setShowIcons(!showIcons)
+    const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
     return (
         <>
-        <div className="yellowdiv">
-               <h3 style={{fontWeight:"55"}}>Spring into Sale | Up to 60% off | Now Live |</h3>
-               <h3 style={{color: "rgb(255, 102, 0)"}}>Click to shop!</h3>
-             </div>
+            <div className="yellowdiv">
+                <h3 style={{ fontWeight: "55" }}>Spring into Sale | Up to 60% off | Now Live |</h3>
+                <h3 style={{ color: "rgb(255, 102, 0)" }}>Click to shop!</h3>
+            </div>
             <div className="topdiv">
                 <div>
-                    <Link to="" className="linktopdiv"><FiHelpCircle/>   Help</Link>
-                    <Link to="" className="linktopdiv"><FaSearchLocation/>   Track Order</Link>
-                    
+                    <Link to="" className="linktopdiv"><FiHelpCircle />   Help</Link>
+                    <Link to="" className="linktopdiv"><FaSearchLocation />   Track Order</Link>
+
                 </div>
                 <div>
-                <Link to="" className="linktopdiv">Stores</Link>
-                <Link to="" className="linktopdiv">Bulk Order</Link>
-                <Link to="" className="linktopdiv">Gift Cards</Link>
-                <Link to="" className="linktopdiv">UL Services</Link>
-                   
+                    <Link to="" className="linktopdiv">Stores</Link>
+                    <Link to="" className="linktopdiv">Bulk Order</Link>
+                    <Link to="" className="linktopdiv">Gift Cards</Link>
+                    <Link to="" className="linktopdiv">UL Services</Link>
+
                 </div>
             </div>
             <nav className="nav">
-                <Link to="/" className="logofornav" style={{textDecoration: 'none'}}>
-             
+                <Link to="/" className="logofornav" style={{ textDecoration: 'none' }}>
+
                     <img src={img1} alt="Logo" />
                     <div className="h1tag">
-                    <h1>Furniture</h1>
-                    <h1>Frenzy</h1>
-                    
+                        <h1>Furniture</h1>
+                        <h1>Frenzy</h1>
+
                     </div>
-                    
+
                 </Link>
-                
+
                 <div className="search">
-                    <input type="text" className="search__input" placeholder="Search" value={value} onChange={(e)=>setValue(e.target.value)}/>
-                        <button type="submit" className="search__button" onSubmit={props.doIt}>
-                            <svg className="search__icon" aria-hidden="true" viewBox="0 0 24 24">
-                                <g>
-                                    <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-                                </g>
-                            </svg>
-                        </button>
-                    
+                    <input type="text" className="search__input" placeholder="Search" value={value} onChange={(e) => setValue(e.target.value)} />
+                    <button type="submit" className="search__button" onSubmit={props.doIt}>
+                        <svg className="search__icon" aria-hidden="true" viewBox="0 0 24 24">
+                            <g>
+                                <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+                            </g>
+                        </svg>
+                    </button>
+
                 </div>
                 <div className="iconfornav">
                     <ul className="ulofnavicon">
-                        
-                        <li><Link to="/"><FaUser className="iconcolor" /></Link></li>
                         <li><Link to="/"><FaRegHeart className="iconcolor" /></Link></li>
                         <li><Link to="/"><FaSearchLocation className="iconcolor" /></Link></li>
                         <li><Link to="/CartPage"><FaShoppingCart className="iconcolor" /></Link></li>
+                        <li className="logincomp">
+                        {isAuthenticated ? <li><button className="logoutbtn" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                            Log Out
+                        </button></li> : <li><button className="loginbtn" onClick={() => loginWithRedirect()}>Log In</button></li>}
+                        <li>{isAuthenticated && <p>{user.name}</p>}</li>
+                        </li>
                     </ul>
-                   
+
                     <div className="hamburger-menu" onClick={handlehamburger}>
-                    <a href="./" onClick={() => setShowIcons(!showIcons)}>
-              <GiHamburgerMenu />
-            </a>
+                        <a href="./" onClick={() => setShowIcons(!showIcons)}>
+                            <GiHamburgerMenu />
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -77,7 +83,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Top Deals</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Top Deals</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Daily Deals</Link></p>
@@ -98,7 +104,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Sofas</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Sofas</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="/Sofas">All Sofas</Link></p>
@@ -114,7 +120,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Recliners</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Recliners</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Recliners</Link></p>
@@ -130,7 +136,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Sofa Bed</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Sofa Bed</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofa Bed</Link></p>
@@ -142,7 +148,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Seating & Chairs</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Seating & Chairs</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -164,7 +170,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Seating & Chairs</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Seating & Chairs</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -182,7 +188,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Tabels</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Tabels</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Coffee Tabels</Link></p>
@@ -195,7 +201,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Living Storage</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Living Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">TV Units</Link></p>
@@ -219,7 +225,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Beds</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Beds</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Beds</Link></p>
@@ -239,7 +245,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Mattresses</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Mattresses</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Mattresses</Link></p>
@@ -258,7 +264,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Storage & Accessories</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Storage & Accessories</Link></h5>
                                     </div>
 
                                     <div>
@@ -276,7 +282,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Kids Room</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Kids Room</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Kids Beds </Link></p>
@@ -295,7 +301,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Dining Tables & Chairs</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Dining Tables & Chairs</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">6 Seater Dining Tables Sets</Link></p>
@@ -313,7 +319,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Storage & bar Furniture</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Storage & bar Furniture</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Crockery Units</Link></p>
@@ -333,7 +339,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Living Storage</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Living Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Shoe Racks</Link></p>
@@ -347,7 +353,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Bedroom Storage</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Bedroom Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Coupboards</Link></p>
@@ -361,7 +367,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Dining Storage</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Dining Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Crockery Units</Link></p>
@@ -373,7 +379,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Kids Storage</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Kids Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Kids Bookshelves</Link></p>
@@ -392,7 +398,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Study Tables</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Study Tables</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Study Tables</Link></p>
@@ -406,7 +412,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Study Chair</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Study Chair</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Study Chair</Link></p>
@@ -419,7 +425,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Storage</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Storage</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Bookshelevs</Link></p>
@@ -429,7 +435,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Decor</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Decor</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Study Lamps</Link></p>
@@ -444,7 +450,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Lighting</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Lighting</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofas</Link></p>
@@ -460,7 +466,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Carpets & Rugs</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Carpets & Rugs</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Recliners</Link></p>
@@ -476,7 +482,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Home Linen</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Home Linen</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofa Bed</Link></p>
@@ -488,7 +494,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Wall Decor</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Wall Decor</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -503,7 +509,7 @@ export function Navbar(props) {
                                 </div>
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Home Decor</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Home Decor</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -518,14 +524,14 @@ export function Navbar(props) {
                                 </div>
                             </div>
                         </div>
-                        </li>
+                    </li>
                     <li>
                         <Link to="">Outdoor</Link>
                         <div className="dropdown-content">
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Balcony & Outdoors</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Balcony & Outdoors</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Balcony Chairs</Link></p>
@@ -545,7 +551,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Urban Interiors</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Urban Interiors</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Full Home Interiors</Link></p>
@@ -562,7 +568,7 @@ export function Navbar(props) {
                             <div className="row">
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>House Of Urban Ladder</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>House Of Urban Ladder</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">All Sofas</Link></p>
@@ -574,7 +580,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>New Arrivals</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>New Arrivals</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">1 Seater Recliners</Link></p>
@@ -590,7 +596,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>Best Sellers</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>Best Sellers</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Fabric Sofa Bed</Link></p>
@@ -604,7 +610,7 @@ export function Navbar(props) {
                                 <hr />
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>All Furniture</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>All Furniture</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>
@@ -619,7 +625,7 @@ export function Navbar(props) {
                                 </div>
                                 <div className="col">
                                     <div>
-                                        <h5><Link to="#" style={{fontWeight:"600"}}>UL Exclusive</Link></h5>
+                                        <h5><Link to="#" style={{ fontWeight: "600" }}>UL Exclusive</Link></h5>
                                     </div>
                                     <div>
                                         <p><Link to="#">Lounge Chairs</Link></p>

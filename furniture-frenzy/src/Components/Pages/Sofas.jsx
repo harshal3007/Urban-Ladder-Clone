@@ -3,13 +3,16 @@ import { Footer } from "../Footer/footer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Navbar } from "../Header/NavBar";
-
+import FilterProducts from "./filter";
 export function SofaPage() {
   const [data, setData] = useState([])
   const [formattedData, setFormattedData] = useState([]);
   const [value, setValue] = useState("")
   const [sortData, setSortData] = useState("")
   const [page, setPage] = useState(1)
+  const [filterTextValue, updateFilterTextValue] = useState('all');
+  const [cartItems, setCartItems] = useState([]);
+
 
   useEffect(() => {
     loadSofasData(page)
@@ -77,6 +80,38 @@ export function SofaPage() {
   }, [data]);
 
   const sortOptions = ["name", "brandName", 'totalPrice', "shippingDay", "discount"]
+  
+  const filteredData = formattedData.filter((item) => {
+    if (filterTextValue === 'all') {
+      return true;
+    }
+    return item.brandName.toLowerCase() === filterTextValue.toLowerCase();
+  });
+
+  function onFilterValueSelected(value) {
+    updateFilterTextValue(value);
+  }
+
+
+  function addToCart(item) {
+    const updatedCartItems = [...cartItems];
+    const index = updatedCartItems.findIndex((cartItem) => cartItem.id === item.id);
+
+    if (index >= 0) {
+      updatedCartItems[index].quantity += 1;
+    } else {
+      updatedCartItems.push({
+        id: item.id,
+        name: item.name,
+        image: item.image,
+        totalPrice: item.totalPrice,
+        brandName :item.brandName,
+        quantity: 1
+      });
+    }
+    setCartItems(updatedCartItems);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+  }
 
   return (
     <>
@@ -85,10 +120,11 @@ export function SofaPage() {
         <h2>All Sofas</h2>
         <p>Perfect for the whole family to pile onto for game nights or for you to lounge on while binging your favorite TV shows, the sofa is that cozy piece of furniture that can truly bring any room to life. Available in so many exciting designs, shapes, and seating arrangements, the sofa design can be easily ... More</p>
       </div>
-      <div className="filterdiv">
+      
+      <div className="filsordiv">
+      <FilterProducts filterValueSelected={onFilterValueSelected}/>
         <div>
-        </div>
-        <div>
+          <p>Sort By</p>
           <select className="sortbtn" onChange={handleSort} value={sortData}>
             <option value="">Recommended</option>
             {sortOptions.map((item, index) => (
@@ -100,7 +136,7 @@ export function SofaPage() {
       </div>
 
       <div className="sofadiv">
-        {formattedData.map((item) => (
+        {filteredData.map((item) => (
           <div key={item.id} className="item">
             <img className="image" src={item.image} alt={item.name} />
             <p className="name">{item.name}</p>
@@ -109,8 +145,19 @@ export function SofaPage() {
             <p className="discount">Discount: {item.discount}%</p>
             <p className="discountPrice">Discount Price: ₹{item.discountPrice.toFixed(2)}</p>
             <p className="shippingDay">Seating Capacity: {item.shippingDay}</p>
-            <button className="add-to-cart-button">Add to Wishlist</button>
+            {cartItems.find((cartItem) => cartItem.id === item.id) ? (
+    <button className="add-to-cart-button">Wishlisted</button>
+  ) : (
+    <button
+      className="add-to-cart-button"
+      onClick={() => addToCart(item)}
+    >
+      Add to Wishlist
+    </button>
+  )}
+        
             <div className="bore">
+              
               <button className="add-to-compare-button">Add to Compare</button>
               <button className="view-options-button">View 2 Options</button>
             </div>

@@ -75,7 +75,7 @@ html{
     border-right: 1px solid rgb(189, 186, 186);
     border-radius: 2px;
     margin-top: .1em;
-    background-color : white ;
+    background-color : rgba(255, 255, 255, 0) ;
   }
   
   .search__button:hover {
@@ -285,4 +285,33 @@ html{
 }
 .linktopdiv:hover{
   color: rgb(255, 119, 0) ;
+}
+.logincomp{
+  /* border: 1px solid black; */
+  display: block;
+  margin-left: 20px;
+  width: 100%;
+  text-align: center;
+}
+.logincomp p{
+  font-size: 10px;
+  color: rgb(54, 62, 87);
+}
+.logoutbtn{
+  width: 70%;
+  height: 3rem;
+  margin-right: 15%;
+  background-color: rgb(255, 115, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.loginbtn{
+  width: 100%;
+  height: 3rem;
+  margin-right: 15%;
+  background-color: rgb(255, 255, 254);
+  color: rgb(255, 115, 0);
+  border: 2px solid rgb(255, 115, 0);
+  border-radius: 5px;
 }
